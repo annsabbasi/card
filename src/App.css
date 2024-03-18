@@ -26,3 +26,13 @@
 } */
 
 @tailwind utilities;
+
+.theli:hover>span {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.theli>span {
+  transform: scaleX(0);
+  transform-origin: right;
+}

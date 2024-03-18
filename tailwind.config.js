@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         'text-shadow-italic': ['"Shadows Into Light"', 'cursive'],
         'text-comfortaa': ['"Comfortaa"', 'sans-serif']
+      },
+      maxWidth: {
+        'the-max-width': '1340px'
       }
     },
   },
