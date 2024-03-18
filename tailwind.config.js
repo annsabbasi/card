@@ -9,7 +9,7 @@ module.exports = {
       },
       maxWidth: {
         'the-max-width': '1340px'
-      }
+      },
     },
   },
   plugins: [],
