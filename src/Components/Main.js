@@ -11,7 +11,9 @@ import img5 from '../Images/img5.webp'
 import img6 from '../Images/img6.webp'
 import img7 from '../Images/img7.webp'
 import img8 from '../Images/img8.webp'
-import bglogo from '../Images/bg-logo.png'
+import bglogo from '../Images/logos/bg-logo.png'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export default function Main() {
     const dataSvg = [
@@ -118,6 +120,25 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
         },
     ]
 
+
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+            slidesToSlide: 1
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 3,
+            slidesToSlide: 1
+        },
+        mobile: {
+            breakpoint: { max: 767, min: 464 },
+            items: 2,
+            slidesToSlide: 1
+        }
+    };
+
     return (
         <div>
             <section className='landing-main bg-cover bg-center bg-no-repeat flex items-center justify-center relative h-auto'>
@@ -221,22 +242,32 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
 
             {/* TRENDING CARDS */}
             <section className='flex items-center justify-center'>
-                <div className='flex items-center justify-center flex-col gap-20 max-w-screen-xl text-center w-full py-24 pb-36'>
+                <div className='flex items-center justify-center flex-col gap-20 max-w-screen-2xl text-center w-full py-24 pb-36'>
                     <span className='w-full'>
                         <h2 className='text-5xl font-semibold text-[#364957] mb-5'>Trending Cards</h2>
                         <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
                     </span>
-                    <article className="max-w-screen-2xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-                        {[img1, img2, img3, img4, img5, img6, img7, img8].map((img, index) => (
-                            <div key={index} className='card-hover relative bg-white shadow-md shadow-gray-600 cursor-pointer'>
-                                <img src={img} alt={`Trending Card ${index}`} />
-                            </div>
-                        ))}
+                    <article className="w-full">
+                        <Carousel
+                            responsive={responsive}
+                            infinite={true}
+                            partialVisible={false}
+                            dotListClass="custom-dot-list-style"
+                            className='w-full'
+                        >
+                            {[img1, img2, img3, img4, img5, img6, img7, img8].map((imageUrl, index) => {
+                                return (
+                                    <div className="shadow-md shadow-gray-300 border py-5 mx-5" key={index}>
+                                        <img src={imageUrl} alt="movie" className="w-full rounded-md" />
+                                    </div>
+                                );
+                            })}
+                        </Carousel>
                     </article>
                 </div>
             </section>
 
-            {/*  */}
+            {/* FOOTER */}
             <footer className='bg-slate-800 flex items-center justify-center'>
                 <article className='flex justify-between gap-20 max-w-screen-xl w-full py-24 px-10'>
                     <div className='w-fit'>
