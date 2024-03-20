@@ -133,8 +133,8 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             slidesToSlide: 1
         },
         mobile: {
-            breakpoint: { max: 767, min: 464 },
-            items: 2,
+            breakpoint: { max: 480, min: 0 },
+            items: 1,
             slidesToSlide: 1
         }
     };
@@ -142,11 +142,11 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
     return (
         <div>
             <section className='landing-main bg-cover bg-center bg-no-repeat flex items-center justify-center relative h-auto'>
-                <div className='flex-col md:max-w-6xl max-w-3xl mx-auto h-4/5 text-center z-10 my-12 md:my-20'>
+                <div className='flex-col md:max-w-6xl max-w-3xl mx-auto h-4/5 text-center z-10 my-12 md:my-20 px-2 sm:px-0'>
                     <h1 className='text-[2.7rem] md:text-7xl leading-snug md:leading-tight my-5 text-white uppercase font-text-comfortaa font-semibold'>Heartfelt MOMENTS MADE EASY</h1>
                     <p className='text-white md:text-3xl text-2xl mt-5 md:mt-10 mb-8 font-text-shadow-italic'>AI Powered Greeting Cards With A Human Touch</p>
-                    <span className='flex items-center justify-between w-3/5 mx-auto'>
-                        <button className='w-[30%]  bg-[#FC5C66] text-white font-semibold rounded-md py-2 px-2 text-lg md:text-xl border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 '>Subscribe</button>
+                    <span className='flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-between w-3/5 mx-auto'>
+                        <button className='w-fit sm:w-[30%]  bg-[#FC5C66] text-white font-semibold rounded-md py-2 px-4 sm:px-2 text-lg md:text-xl border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 '>Subscribe</button>
                         <button className='w-fit md:w-[30%] bg-white border-[#FC5C66] border-2 text-[#FC5C66] font-semibold rounded-md py-2 px-4 md:px-2 text-lg md:text-xl hover:bg-[#FC5C66] hover:text-white transition-all duration-200'>Generate Card</button>
                     </span>
                 </div>
@@ -157,14 +157,13 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                 <div className='max-w-screen-xl text-center w-full'>
                     <h2 className='text-4xl md:text-5xl font-semibold text-[#364957] mb-5'>How it Works</h2>
                     <hr className='h-[3px] w-[10%] md:w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
-                    {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20'> */}
-                    <div className='grid grid-cols-3 gap-2 md:gap-8 mt-12 md:mt-20'>
+                    <div className='grid grid-cols-1  sm:grid-cols-3 gap-12 sm:gap-2 md:gap-8 mt-12 md:mt-20'>
                         {dataSvg.map((item, index) => (
-                            <div key={index} className='p-3 md:p-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 h-76 '>
+                            <div key={index} className='w-4/5 mx-auto sm:w-full p-3 md:p-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 h-68 sm:h-76 hover:border border-transparent border'>
                                 <div className='mx-auto p-5 border border-2-[#364957] w-fit rounded-full mb-3'>
                                     {item.icon}
                                 </div>
-                                <h3 className='text-lg md:text-2xl font-semibold h-16 text-[#364957] mt-4 mb-3'>{item.title}</h3>
+                                <h3 className='text-lg md:text-2xl font-semibold h-10 sm:h-16 text-[#364957] mt-4 mb-3'>{item.title}</h3>
                                 <p className='text-[#364957] text-base'>{item.description}</p>
                             </div>
                         ))}
@@ -184,12 +183,12 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <article className='w-full px-5 py-10 sm:py-0 sm:pb-10'>
                         <div className='flex flex-col gap-5 sm:gap-10'>
                             <span className=''>
-                                <h2 className='text-2xl sm:text-3xl md:text-5xl font-semibold text-[#364957] mb-2 sm:mb-5'>Real Greetings Cards</h2>
+                                <h2 className='text-3xl md:text-5xl font-semibold text-[#364957] mb-2 sm:mb-5'>Real Greetings Cards</h2>
                                 <hr className='h-[3px] w-[20%] rounded-lg bg-[#FC5C66]' />
                             </span>
-                            <p className='text-[#364957] text-sm sm:text-base md:text-lg'>An amazing collection of high-quality card made from 100% recycled material.</p>
-                            <p className='text-[#FC5C66] text-base sm:text-lg md:text-2xl font-medium'>Get our special offer - 30% off</p>
-                            <button className='w-fit md:w-[80%] lg:w-[40%] bg-[#FC5C66] text-white font-semibold rounded-full py-2 sm:py-3 px-4 sm:px-7 md:px-2 text-sm md:text-base border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 uppercase'>Get Started Today!</button>
+                            <p className='text-[#364957] text-base md:text-lg'>An amazing collection of high-quality card made from 100% recycled material.</p>
+                            <p className='text-[#FC5C66] text-lg md:text-2xl font-medium'>Get our special offer - 30% off</p>
+                            <button className='w-fit md:w-[80%] lg:w-[40%] bg-[#FC5C66] text-white font-semibold rounded-full py-3 px-7 md:px-2 text-sm md:text-base border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 uppercase'>Get Started Today!</button>
                         </div>
                     </article>
                 </div>
@@ -201,9 +200,9 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <span>
                         <h2 className='text-4xl md:text-5xl font-semibold text-[#364957]'>What Do You Get?</h2>
                     </span>
-                    <article className='flex items-center gap-1 md:gap-10 mt-10 md:mt-20'>
+                    <article className='flex flex-col sm:flex-row items-center gap-12 sm:gap-1 md:gap-10 mt-10 md:mt-20'>
                         {dataGetCard.map((item, index) => (
-                            <div key={index} className='flex items-center flex-col justify-between px-2 self-center py-5 h-72 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
+                            <div key={index} className='flex w-4/5 sm:w-full items-center flex-col justify-between px-2 self-center py-5 h-60 sm:h-72 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
                                 <div className='mx-auto p-0 md:p-5 w-fit rounded-full mb-3'>
                                     {item.icon}
                                 </div>
@@ -225,7 +224,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <article className='flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'>
                         {dataTestimonials.map((item, index) => (
                             <div key={index} className='height-here text-center w-4/5 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
-                                <div className='rounded-full relative'><img className='absolute -top-16 md:-top-20 rounded-full w-32 sm:w-24 md:w-28 h-32 sm:h-24 md:h-28 left-1/3 sm:left-1/4 md:left-1/3' src={item.student} alt="" /></div>
+                                <div className='rounded-full relative'><img className='absolute -top-16 md:-top-20 rounded-full w-32 sm:w-24 md:w-28 h-32 sm:h-24 md:h-28 left-[28%] sm:left-1/4 md:left-1/3' src={item.student} alt="" /></div>
                                 <article>
                                     <div className='mt-28 sm:mt-20 md:mt-28 flex items-center flex-col justify-between h-72'>
                                         <span className='text-center'>
@@ -244,22 +243,21 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
 
             {/* TRENDING CARDS */}
             <section className='flex items-center justify-center'>
-                <div className='flex items-center justify-center flex-col gap-20 max-w-screen-2xl text-center w-full py-20 px-5'>
+                <div className='flex items-center justify-center flex-col gap-16 sm:gap-20 max-w-screen-2xl text-center w-full py-20 px-5'>
                     <span className='w-full'>
                         <h2 className='text-4xl md:text-5xl font-semibold text-[#364957] mb-5'>Trending Cards</h2>
                         <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
                     </span>
-                    <article className="w-full">
+                    <article className="w-11/12">
                         <Carousel
                             responsive={responsive}
                             infinite={true}
                             partialVisible={false}
                             dotListClass="custom-dot-list-style"
-                            className='w-full'
                         >
                             {[img1, img2, img3, img4, img5, img6, img7, img8].map((imageUrl, index) => {
                                 return (
-                                    <div className="shadow-md shadow-gray-300 border mx-5 my-4 py-5" key={index}>
+                                    <div className="shadow-md shadow-gray-300 border mx-5 my-0 sm:my-4 py-5" key={index}>
                                         <img src={imageUrl} alt="movie" className="w-full rounded-md" />
                                     </div>
                                 );
