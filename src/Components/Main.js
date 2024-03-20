@@ -326,7 +326,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
 
             {/* FOOTER */}
             <footer className='bg-slate-800 flex items-center justify-center'>
-                <article className='flex flex-col sm:flex-row border justify-between gap-5 sm:gap-10 md:gap-20 max-w-screen-xl w-full py-24 px-10'>
+                <article className='flex flex-col sm:flex-row justify-between gap-5 sm:gap-10 md:gap-20 max-w-screen-xl w-full py-24 px-10'>
                     <div className='w-fit'>
                         <span className='cursor-pointer'><img src={bglogo} alt="" className='w-32 md:w-60 mb-10' /></span>
                         <button className='w-full bg-[#FC5C66] text-white font-semibold rounded-full py-3 px-3 text-sm md:text-base border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 uppercase'>Contact Us</button>

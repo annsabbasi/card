@@ -6,7 +6,7 @@ export default function Navbar() {
         <>
             <header className='shadow-md shadow-gray-200 py-3'>
                 <nav className='flex items-center justify-between max-w-screen-xl mx-auto px-5'>
-                    <span className='w-40 sm:w-[20%] md:w-[12%] cursor-pointer'><img src={logo} alt="" className='w-fit' /></span>
+                    <span className='w-48 sm:w-[20%] md:w-[12%] cursor-pointer'><img src={logo} alt="" className='w-fit' /></span>
                     <div className='w-1/2'>
                         <ul className='hidden md:flex items-center justify-between text-lg text-gray-500 font-normal'>
                             <li className='relative theli pb-[2px]'>
