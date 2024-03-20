@@ -9,8 +9,6 @@ function App() {
     <>
       <Navbar />
       <Main />
-      {/* <Test /> */}
-      {/* <TheTest /> */}
     </>
   );
 }
