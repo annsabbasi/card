@@ -6,9 +6,9 @@ export default function Navbar() {
         <>
             <header className='shadow-md shadow-gray-200 py-3'>
                 <nav className='flex items-center justify-between max-w-screen-xl mx-auto px-5'>
-                    <span className='w-[12%] cursor-pointer'><img src={logo} alt="" className='w-fit' /></span>
+                    <span className='w-[20%] md:w-[12%] cursor-pointer'><img src={logo} alt="" className='w-fit' /></span>
                     <div className='w-1/2'>
-                        <ul className='flex items-center justify-between text-lg text-gray-500 font-normal'>
+                        <ul className='hidden md:flex items-center justify-between text-lg text-gray-500 font-normal'>
                             <li className='relative theli pb-[2px]'>
                                 <a href="/">About Us</a>
                                 <span className='absolute left-0 bottom-0 w-full h-[2px] bg-red-500 transition-transform transform origin-left'></span>
@@ -43,6 +43,13 @@ export default function Navbar() {
                         <span className='cursor-pointer fill-[#FC5C66] hover:scale-110 transition-all'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px"><path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z" /></svg>
                         </span>
+                    </span>
+
+                    {/* HAMBURGER */}
+                    <span className='block md:hidden ml-24'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="text-[#FC5C66] w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
                     </span>
                 </nav>
             </header>
