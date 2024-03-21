@@ -244,7 +244,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     </article>
 
                     {/* For the Mobile */}
-                    <article className='block sm:hidden w-11/12 h-screen mb-20'>
+                    <article className='block sm:hidden w-11/12 h-screen mb-5'>
                         <Carousel
                             responsive={responsive}
                             infinite={true}
