@@ -244,7 +244,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     </article>
 
                     {/* For the Mobile */}
-                    <article className='block sm:hidden w-11/12 h-screen mb-5'>
+                    <article className='block sm:hidden w-11/12 mb-5'>
                         <Carousel
                             responsive={responsive}
                             infinite={true}
@@ -299,8 +299,8 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             </section>
 
             {/* TODO SECTION */}
-            < section >
-                <section class=" text-gray-700 py-5 h-auto">
+            < section className='bg-white dark:bg-gray-900' >
+                {/* <section class=" text-gray-700 py-5 h-auto">
                     <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
                         <h2 class="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">Frequently Asked Questions</h2>
                         <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
@@ -350,7 +350,80 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                             </details>
                         </div>
                     </div>
+                </section> */}
+
+                <section class="max-w-screen-xl mx-auto"> 
+                    <div class="container px-6 py-12 mx-auto">
+                        <h1 class="text-2xl font-semibold text-gray-800 lg:text-4xl dark:text-white">Frequently asked questions</h1>
+
+                        <div class="mt-8 space-y-8 lg:mt-12">
+                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                                <button class="flex items-center justify-between w-full">
+                                    <h1 class="font-semibold text-gray-700 dark:text-white">How i can play for my appoinment ?</h1>
+
+                                    <span class="text-gray-400 bg-gray-200 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <p class="mt-6 text-sm text-gray-500 dark:text-gray-300">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                                </p>
+                            </div>
+
+                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                                <button class="flex items-center justify-between w-full">
+                                    <h1 class="font-semibold text-gray-700 dark:text-white">Is the cost of the appoinment covered by private health insurance?</h1>
+
+                                    <span class="text-white bg-blue-500 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                                <button class="flex items-center justify-between w-full">
+                                    <h1 class="font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
+
+                                    <span class="text-white bg-blue-500 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                                <button class="flex items-center justify-between w-full">
+                                    <h1 class="font-semibold text-gray-700 dark:text-white">What are your opening house?</h1>
+
+                                    <span class="text-white bg-blue-500 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                                <button class="flex items-center justify-between w-full">
+                                    <h1 class="font-semibold text-gray-700 dark:text-white">What can i expect at my first consultation?</h1>
+
+                                    <span class="text-white bg-blue-500 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
+
             </section>
 
             {/* FOOTER */}
