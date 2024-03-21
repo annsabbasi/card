@@ -5,7 +5,7 @@ import logo from '../Images/logos/logo.webp'
 const MobileNav = ({ onClose }) => {
     return (
         <>
-            <div className='flex fixed h-screen -top-0 right-0 z-20 bg-white sm:hidden items-start flex-col gap-10 justify-between pb-20 w-11/12 p-10 border'>
+            <div className='flex fixed h-screen z-20 -top-0 right-0 bg-white sm:hidden items-start flex-col gap-10 justify-between pb-20 w-11/12 p-10 border'>
                 <span className='close ml-auto cursor-pointer' onClick={onClose}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="text-pink-utility w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>

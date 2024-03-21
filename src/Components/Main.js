@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pic1 from '../Images/pic1.webp'
 import bglogo from '../Images/logos/bg-logo.png'
 
@@ -19,6 +19,22 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Main() {
+    // const [showText, setShowText] = useState(false);
+
+    // const toggleText = () => {
+    //     setShowText(!showText);
+    // };
+
+    const [showText, setShowText] = useState([false, false, false]);
+
+    const toggleText = (index) => {
+        setShowText(prevState => {
+            const newState = [...prevState];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    }
+
     const dataSvg = [
         {
             title: "Generate Your Cards",
@@ -224,7 +240,6 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                         <h2 className='text-4xl md:text-5xl font-semibold text-main-utility mb-0 sm:mb-5'>Testimonials</h2>
                         <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-pink-utility' />
                     </span>
-                    {/* <article className='flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'> */}
                     <article className='hidden sm:flex items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'>
                         {dataTestimonials.map((item, index) => (
                             <div key={index} className='height-here text-center w-4/5 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
@@ -299,83 +314,54 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             </section>
 
             {/* TODO SECTION */}
-            < section className='bg-white dark:bg-gray-900' >
-                {/* <section class=" text-gray-700 py-5 h-auto">
-                    <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
-                        <h2 class="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">Frequently Asked Questions</h2>
-                        <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">How can I place an order?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>You can easily place an order on our website by browsing our product catalog, selecting the items you want, and adding them to your cart. Then, proceed to checkout, where you can provide your shipping and payment information to complete the order.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">What payment methods do you accept?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>We accept various payment methods, including credit cards, debit cards, net banking, and mobile wallet payments. You can choose the payment option that is most convenient for you during the checkout process.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">How long does shipping take?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>Shipping times may vary depending on your location and the shipping method chosen. Typically, orders are processed within 1-2 business days, and delivery can take 3-7 business days within India. You will receive a tracking notification once your order is shipped.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">Can I return a product if I'm not satisfied?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>Yes, we have a hassle-free return policy. If you are not satisfied with your purchase, you can initiate a return within 30 days of receiving the product. Please contact our customer support at <a href="/" class="underline">example@gmail.com</a> for assistance.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">Do you offer international shipping?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>Currently, we only provide shipping services within India. However, we may consider expanding our shipping options to international locations in the future. Please stay updated with our website for any changes in shipping destinations.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">What is your customer support contact?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>If you have any questions, concerns, or need assistance, you can reach our customer support team at 9911083755 during our business hours, Monday to Saturday from 10 am to 6 pm. You can also contact us via email at <a href="/" class="underline">example@gmail.com</a>.</p>
-                                </div>
-                            </details>
-                            <details>
-                                <summary class="py-2 outline-none cursor-pointer focus:underline">What are your terms and conditions?</summary>
-                                <div class="px-4 pb-4">
-                                    <p>You can find our detailed terms and conditions by visiting our
-                                        <a href="/" class="underline">Terms of Service</a>
-                                        page on our website. It includes information about our policies, user guidelines, and more.</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </section> */}
-
-                <section class="max-w-screen-xl mx-auto"> 
+            < section className='dark:bg-gray-900' >
+                <section class="max-w-screen-xl mx-auto">
                     <div class="container px-6 py-12 mx-auto">
-                        <h1 class="text-2xl font-semibold text-gray-800 lg:text-4xl dark:text-white">Frequently asked questions</h1>
+                        <h1 class="text-2xl font-semibold lg:text-4xl dark:text-white">Frequently asked questions</h1>
 
                         <div class="mt-8 space-y-8 lg:mt-12">
-                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
-                                <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold text-gray-700 dark:text-white">How i can play for my appoinment ?</h1>
-
-                                    <span class="text-gray-400 bg-gray-200 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                            {/* <div className="p-8 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={toggleText}>
+                                <button className="flex items-center justify-between w-full">
+                                    <h1 className="font-semibold  dark:text-white text-start">How can I play for my appointment?</h1>
+                                    <span className="text-gray-400 bg-gray-200 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
                                         </svg>
                                     </span>
                                 </button>
 
-                                <p class="mt-6 text-sm text-gray-500 dark:text-gray-300">
+                                <p className={`text-sm transition-all duration-300 dark:text-gray-300 ${showText ? 'opacity-100 max-h-[200px] pt-5 ease-in-out' : 'opacity-0 max-h-0 overflow-hidden'}`}>
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
                                 </p>
+                            </div> */}
+                            <div className='flex items-center flex-col gap-10'>
+                                {[0, 1, 2].map(index => (
+                                    <div key={index} className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={() => toggleText(index)}>
+                                        <button className="flex items-center justify-between w-full">
+                                            <h1 className="font-semibold text-gray-700 dark:text-white text-start">
+                                                {index === 0 ? "How can I play for my appointment?" : index === 1 ? "Is the cost of the appointment covered by private health insurance?" : "Do I need a referral?"}
+                                            </h1>
+                                            <span className="text-gray-400 bg-gray-200 rounded-full">
+                                                {showText ? (<svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
+                                                </svg>) : (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25" />
+                                                </svg>
+                                                )}
+                                            </span>
+                                        </button>
+                                        <p className={`text-sm transition-all duration-300 text-gray-500 dark:text-gray-300 ${showText[index] ? 'opacity-100 max-h-[200px] pt-5 ease-in-out' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
 
-                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+
+
+                            {/* <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
                                 <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold text-gray-700 dark:text-white">Is the cost of the appoinment covered by private health insurance?</h1>
+                                    <h1 class="font-semibold dark:text-white text-start">Is the cost of the appoinment covered by private health insurance?</h1>
 
                                     <span class="text-white bg-blue-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -385,9 +371,9 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                 </button>
                             </div>
 
-                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
                                 <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
+                                    <h1 class="font-semibold dark:text-white text-start">Do i need a referral?</h1>
 
                                     <span class="text-white bg-blue-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -397,9 +383,9 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                 </button>
                             </div>
 
-                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
                                 <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold text-gray-700 dark:text-white">What are your opening house?</h1>
+                                    <h1 class="font-semibold dark:text-white text-start">What are your opening house?</h1>
 
                                     <span class="text-white bg-blue-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -409,9 +395,9 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                 </button>
                             </div>
 
-                            <div class="p-8 bg-gray-100 rounded-lg dark:bg-gray-800">
+                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
                                 <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold text-gray-700 dark:text-white">What can i expect at my first consultation?</h1>
+                                    <h1 class="font-semibold dark:text-white text-start">What can i expect at my first consultation?</h1>
 
                                     <span class="text-white bg-blue-500 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -419,7 +405,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                         </svg>
                                     </span>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </section>
