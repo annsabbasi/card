@@ -252,7 +252,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                             dotListClass="custom-dot-list-style"
                         >
                             {dataTestimonials.map((item, index) => (
-                                <div key={index} className='height-here text-center w-full mt-7 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border '>
+                                <div key={index} className='height-here text-center w-[88%] mt-7 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border mx-auto'>
                                     <div className='rounded-full relative'><img className='absolute -top-16 md:-top-20 rounded-full w-32 sm:w-24 md:w-28 h-32 sm:h-24 md:h-28 left-[30%] sm:left-1/4 md:left-1/3' src={item.student} alt="" /></div>
                                     <article>
                                         <div className='mt-28 sm:mt-20 md:mt-28 flex items-center flex-col justify-between h-72'>
