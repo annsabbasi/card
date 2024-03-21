@@ -13,6 +13,25 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+@layer utilities {
+  .bg-pink-utility {
+    background-color: #FC5C66
+  }
+
+  .text-pink-utility {
+    color: #FC5C66
+  }
+
+  .border-pink-utility {
+    border-color: #FC5C66
+  }
+
+  .text-main-utility {
+    color: #364957
+  }
+}
+
+
 @tailwind utilities;
 
 .theli:hover>span {
@@ -28,6 +47,7 @@
 .react-multiple-carousel__arrow--left {
   left: calc(0% + 1px) !important;
 }
+
 .react-multiple-carousel__arrow--right {
   right: calc(0% + 1px) !important;
 }

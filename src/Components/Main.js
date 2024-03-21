@@ -1,8 +1,11 @@
 import React from 'react'
 import pic1 from '../Images/pic1.webp'
+import bglogo from '../Images/logos/bg-logo.png'
+
 import student1 from '../Images/student1.webp'
 import student2 from '../Images/student2.webp'
 import student3 from '../Images/student3.webp'
+
 import img1 from '../Images/img1.webp'
 import img2 from '../Images/img2.webp'
 import img3 from '../Images/img3.webp'
@@ -11,7 +14,7 @@ import img5 from '../Images/img5.webp'
 import img6 from '../Images/img6.webp'
 import img7 from '../Images/img7.webp'
 import img8 from '../Images/img8.webp'
-import bglogo from '../Images/logos/bg-logo.png'
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -75,6 +78,7 @@ export default function Main() {
         }
     ]
 
+
     const dataTestimonials = [
         {
             title: "Caralynn W.",
@@ -120,7 +124,6 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
         },
     ]
 
-
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -133,7 +136,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             slidesToSlide: 1
         },
         mobile: {
-            breakpoint: { max: 480, min: 0 },
+            breakpoint: { max: 650, min: 0 },
             items: 1,
             slidesToSlide: 1
         }
@@ -146,8 +149,8 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <h1 className='text-[2.7rem] md:text-7xl leading-snug md:leading-tight my-5 text-white uppercase font-text-comfortaa font-semibold'>Heartfelt MOMENTS MADE EASY</h1>
                     <p className='text-white md:text-3xl text-2xl mt-5 md:mt-10 mb-8 font-text-shadow-italic'>AI Powered Greeting Cards With A Human Touch</p>
                     <span className='flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-between w-3/5 mx-auto'>
-                        <button className='w-fit sm:w-[30%]  bg-[#FC5C66] text-white font-semibold rounded-md py-2 px-4 sm:px-2 text-lg md:text-xl border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 '>Subscribe</button>
-                        <button className='w-fit md:w-[30%] bg-white border-[#FC5C66] border-2 text-[#FC5C66] font-semibold rounded-md py-2 px-4 md:px-2 text-lg md:text-xl hover:bg-[#FC5C66] hover:text-white transition-all duration-200'>Generate Card</button>
+                        <button className='w-fit sm:w-[30%]  bg-pink-utility text-white font-semibold rounded-md py-2 px-4 sm:px-2 text-lg md:text-xl border-pink-utility border-2 hover:bg-white hover:text-pink-utility transition-all duration-200 '>Subscribe</button>
+                        <button className='w-fit md:w-[30%] bg-white border-pink-utility border-2 text-pink-utility font-semibold rounded-md py-2 px-4 md:px-2 text-lg md:text-xl hover:bg-pink-utility hover:text-white transition-all duration-200'>Generate Card</button>
                     </span>
                 </div>
             </section>
@@ -155,16 +158,16 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             {/* HOW IT WORKS */}
             <section className='flex items-center justify-center h-auto my-16 md:my-20 px-4 md:px-0'>
                 <div className='max-w-screen-xl text-center w-full'>
-                    <h2 className='text-4xl md:text-5xl font-semibold text-[#364957] mb-5'>How it Works</h2>
-                    <hr className='h-[3px] w-[10%] md:w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
+                    <h2 className='text-4xl md:text-5xl font-semibold text-main-utility mb-5'>How it Works</h2>
+                    <hr className='h-[3px] w-[10%] md:w-[10%] mx-auto rounded-lg bg-pink-utility' />
                     <div className='grid grid-cols-1  sm:grid-cols-3 gap-12 sm:gap-2 md:gap-8 mt-12 md:mt-20'>
                         {dataSvg.map((item, index) => (
                             <div key={index} className='w-4/5 mx-auto sm:w-full p-3 md:p-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 h-68 sm:h-76 hover:border border-transparent border'>
                                 <div className='mx-auto p-5 border border-2-[#364957] w-fit rounded-full mb-3'>
                                     {item.icon}
                                 </div>
-                                <h3 className='text-lg md:text-2xl font-semibold h-10 sm:h-16 text-[#364957] mt-4 mb-3'>{item.title}</h3>
-                                <p className='text-[#364957] text-base'>{item.description}</p>
+                                <h3 className='text-lg md:text-2xl font-semibold h-10 sm:h-16 text-main-utility mt-4 mb-3'>{item.title}</h3>
+                                <p className='text-main-utility text-base'>{item.description}</p>
                             </div>
                         ))}
                     </div>
@@ -183,12 +186,12 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <article className='w-full px-5 py-10 sm:py-0 sm:pb-10'>
                         <div className='flex flex-col gap-5 sm:gap-10'>
                             <span className=''>
-                                <h2 className='text-3xl md:text-5xl font-semibold text-[#364957] mb-2 sm:mb-5'>Real Greetings Cards</h2>
-                                <hr className='h-[3px] w-[20%] rounded-lg bg-[#FC5C66]' />
+                                <h2 className='text-3xl md:text-5xl font-semibold text-main-utility mb-2 sm:mb-5'>Real Greetings Cards</h2>
+                                <hr className='h-[3px] w-[20%] rounded-lg bg-pink-utility' />
                             </span>
-                            <p className='text-[#364957] text-base md:text-lg'>An amazing collection of high-quality card made from 100% recycled material.</p>
-                            <p className='text-[#FC5C66] text-lg md:text-2xl font-medium'>Get our special offer - 30% off</p>
-                            <button className='w-fit md:w-[80%] lg:w-[40%] bg-[#FC5C66] text-white font-semibold rounded-full py-3 px-7 md:px-2 text-sm md:text-base border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 uppercase'>Get Started Today!</button>
+                            <p className='text-main-utility text-base md:text-lg'>An amazing collection of high-quality card made from 100% recycled material.</p>
+                            <p className='text-pink-utility text-lg md:text-2xl font-medium'>Get our special offer - 30% off</p>
+                            <button className='w-fit md:w-[80%] lg:w-[40%] bg-pink-utility text-white font-semibold rounded-full py-3 px-7 md:px-2 text-sm md:text-base border-pink-utility border-2 hover:bg-white hover:text-pink-utility transition-all duration-200 uppercase'>Get Started Today!</button>
                         </div>
                     </article>
                 </div>
@@ -198,7 +201,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             <section className='flex items-center justify-center h-auto my-16 md:my-12'>
                 <div className='max-w-screen-xl text-center w-full'>
                     <span>
-                        <h2 className='text-4xl md:text-5xl font-semibold text-[#364957]'>What Do You Get?</h2>
+                        <h2 className='text-4xl md:text-5xl font-semibold text-main-utility'>What Do You Get?</h2>
                     </span>
                     <article className='flex flex-col sm:flex-row items-center gap-12 sm:gap-1 md:gap-10 mt-10 md:mt-20'>
                         {dataGetCard.map((item, index) => (
@@ -206,8 +209,8 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                 <div className='mx-auto p-0 md:p-5 w-fit rounded-full mb-3'>
                                     {item.icon}
                                 </div>
-                                <h3 className='text-xl md:text-2xl font-semibold text-[#364957] mb-4'>{item.title}</h3>
-                                <p className='text-[#364957] text-sm md:text-base'>{item.description}</p>
+                                <h3 className='text-xl md:text-2xl font-semibold text-main-utility mb-4'>{item.title}</h3>
+                                <p className='text-main-utility text-sm md:text-base'>{item.description}</p>
                             </div>
                         ))}
                     </article>
@@ -216,12 +219,13 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
 
             {/* TESTIMONIAL */}
             <section className='flex items-center justify-center bg-slate-50'>
-                <div className='flex items-center justify-center flex-col gap-20 max-w-screen-xl text-center w-full py-16 md:py-20'>
+                <div className='flex items-center justify-center flex-col gap-12 sm:gap-20 max-w-screen-xl text-center w-full py-16 md:py-20'>
                     <span className='w-full'>
-                        <h2 className='text-4xl md:text-5xl font-semibold text-[#364957] mb-5'>Testimonials</h2>
-                        <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
+                        <h2 className='text-4xl md:text-5xl font-semibold text-main-utility mb-0 sm:mb-5'>Testimonials</h2>
+                        <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-pink-utility' />
                     </span>
-                    <article className='flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'>
+                    {/* <article className='flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'> */}
+                    <article className='hidden sm:flex items-center sm:items-stretch justify-center gap-16 sm:gap-5 md:gap-10 p-5 w-full'>
                         {dataTestimonials.map((item, index) => (
                             <div key={index} className='height-here text-center w-4/5 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
                                 <div className='rounded-full relative'><img className='absolute -top-16 md:-top-20 rounded-full w-32 sm:w-24 md:w-28 h-32 sm:h-24 md:h-28 left-[28%] sm:left-1/4 md:left-1/3' src={item.student} alt="" /></div>
@@ -230,23 +234,50 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                         <span className='text-center'>
                                             {item.icon}
                                         </span>
-                                        <p className='text-[#364957] text-base sm:text-sm md:text-base my-4'>{item.description}</p>
-                                        <h3 className='text-lg md:text-xl text-[#364957] font-semibold mb-0 sm:mb-2 mt-5 md:mt-10'>{item.title}</h3>
-                                        <h4 className='text-xl md:text-2xl text-[#364957] font-normal'>{item.title2}</h4>
+                                        <p className='text-main-utility text-base sm:text-sm md:text-base my-4'>{item.description}</p>
+                                        <h3 className='text-lg md:text-xl text-main-utility font-semibold mb-0 sm:mb-2 mt-5 md:mt-10'>{item.title}</h3>
+                                        <h4 className='text-xl md:text-2xl text-main-utility font-normal'>{item.title2}</h4>
                                     </div>
                                 </article>
                             </div>
                         ))}
                     </article>
+
+                    {/* For the Mobile */}
+                    <article className='block sm:hidden w-11/12 h-screen mb-20'>
+                        <Carousel
+                            responsive={responsive}
+                            infinite={true}
+                            partialVisible={false}
+                            dotListClass="custom-dot-list-style"
+                        >
+                            {dataTestimonials.map((item, index) => (
+                                <div key={index} className='height-here text-center w-full mt-7 sm:w-1/2 md:w-2/5 py-10 bg-white px-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border '>
+                                    <div className='rounded-full relative'><img className='absolute -top-16 md:-top-20 rounded-full w-32 sm:w-24 md:w-28 h-32 sm:h-24 md:h-28 left-[30%] sm:left-1/4 md:left-1/3' src={item.student} alt="" /></div>
+                                    <article>
+                                        <div className='mt-28 sm:mt-20 md:mt-28 flex items-center flex-col justify-between h-72'>
+                                            <span className='text-center'>
+                                                {item.icon}
+                                            </span>
+                                            <p className='text-main-utility text-base sm:text-sm md:text-base my-4'>{item.description}</p>
+                                            <h3 className='text-lg md:text-xl text-main-utility font-semibold mb-0 sm:mb-2 mt-5 md:mt-10'>{item.title}</h3>
+                                            <h4 className='text-xl md:text-2xl text-main-utility font-normal'>{item.title2}</h4>
+                                        </div>
+                                    </article>
+                                </div>
+                            ))}
+                        </Carousel>
+                    </article>
+                    {/*  */}
                 </div>
-            </section>
+            </section >
 
             {/* TRENDING CARDS */}
-            <section className='flex items-center justify-center'>
+            <section section className='flex items-center justify-center' >
                 <div className='flex items-center justify-center flex-col gap-16 sm:gap-20 max-w-screen-2xl text-center w-full py-20 px-5'>
                     <span className='w-full'>
-                        <h2 className='text-4xl md:text-5xl font-semibold text-[#364957] mb-5'>Trending Cards</h2>
-                        <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-[#FC5C66]' />
+                        <h2 className='text-4xl md:text-5xl font-semibold text-main-utility mb-5'>Trending Cards</h2>
+                        <hr className='h-[3px] w-[10%] mx-auto rounded-lg bg-pink-utility' />
                     </span>
                     <article className="w-11/12">
                         <Carousel
@@ -268,8 +299,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             </section>
 
             {/* TODO SECTION */}
-            <section>
-                {/* <section class="bg-[#1D1D1D] text-gray-100 py-32 min-h-screen"> */}
+            < section >
                 <section class=" text-gray-700 py-5 h-auto">
                     <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
                         <h2 class="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">Frequently Asked Questions</h2>
@@ -321,15 +351,14 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                         </div>
                     </div>
                 </section>
-
             </section>
 
             {/* FOOTER */}
-            <footer className='bg-slate-800 flex items-center justify-center'>
+            < footer className='bg-slate-800 flex items-center justify-center' >
                 <article className='flex flex-col sm:flex-row justify-between gap-5 sm:gap-10 md:gap-20 max-w-screen-xl w-full py-24 px-10'>
                     <div className='w-fit'>
                         <span className='cursor-pointer'><img src={bglogo} alt="" className='w-32 md:w-60 mb-10' /></span>
-                        <button className='w-full bg-[#FC5C66] text-white font-semibold rounded-full py-3 px-3 text-sm md:text-base border-[#FC5C66] border-2 hover:bg-white hover:text-[#FC5C66] transition-all duration-200 uppercase'>Contact Us</button>
+                        <button className='w-full bg-pink-utility text-white font-semibold rounded-full py-3 px-3 text-sm md:text-base border-pink-utility border-2 hover:bg-white hover:text-pink-utility transition-all duration-200 uppercase'>Contact Us</button>
                     </div>
                     <div>
                         <ul className='text-base md:text-lg text-gray-300 font-normal mt-10 sm:mt-0'>
@@ -400,7 +429,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                         </span>
                     </div>
                 </article>
-            </footer>
-        </div>
+            </ footer>
+        </div >
     )
 }
