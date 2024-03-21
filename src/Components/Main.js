@@ -317,7 +317,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             < section className='dark:bg-gray-900' >
                 <section class="max-w-screen-xl mx-auto">
                     <div class="container px-6 py-12 mx-auto">
-                        <h1 class="text-2xl font-semibold lg:text-4xl dark:text-white">Frequently asked questions</h1>
+                        <h1 class="text-2xl font-semibold lg:text-4xl text-center dark:text-white">Frequently asked questions</h1>
 
                         <div class="mt-8 space-y-8 lg:mt-12">
                             {/* <div className="p-8 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={toggleText}>
