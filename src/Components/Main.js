@@ -19,11 +19,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Main() {
-    // const [showText, setShowText] = useState(false);
-
-    // const toggleText = () => {
-    //     setShowText(!showText);
-    // };
 
     const [showText, setShowText] = useState([false, false, false]);
 
@@ -37,23 +32,42 @@ export default function Main() {
 
     const dataSvg = [
         {
-            title: "Generate Your Cards",
+            title: "Build Your Recipient Profile",
             description: "Build your recipients profile, by telling us a bit about them",
             icon: (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
                 <path className='text-gray-400' strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-            </svg>)
+            </svg>),
+
+        },
+        {
+            title: "Generate Your Cards",
+            description: "Based on the profile and message theme, we will generate the cards and messages for you",
+            icon: (
+                <svg className="w-11 md:w-16 h-11 md:h-16" version="1.1" id="1325609919" viewBox="0 0 444.146 444.146" xmlSpace="preserve" data-icon-custom="true" data-icon-name="wedding-greeting-card-svgrepo-com.svg">
+                    <g>
+                        <path className='fill-gray-400' d="M163.09,315.913c1.875,1.875,4.418,2.929,7.071,2.929s5.196-1.053,7.071-2.929l23.095-23.096l39.769,39.76
+                    c1.953,1.952,4.511,2.928,7.07,2.928s5.119-0.977,7.071-2.929l59.7-59.7c9.859-9.859,15.289-22.972,15.289-36.921
+                    s-5.43-27.062-15.293-36.925c-9.875-9.863-22.986-15.295-36.917-15.295c-10.828,0-21.156,3.277-29.851,9.362
+                    c-8.694-6.083-19.023-9.36-29.854-9.36c-13.948,0-27.062,5.432-36.926,15.296c-5.925,5.925-10.255,13.031-12.771,20.867
+                    c-4.973-2.466-10.481-3.782-16.193-3.782c-9.75,0-18.917,3.797-25.811,10.691c-14.232,14.232-14.232,37.389,0,51.622
+                    L163.09,315.913z M217.312,203.739c8.606,0,16.697,3.352,22.784,9.438c3.907,3.906,10.238,3.906,14.142,0
+                    c6.089-6.088,14.178-9.441,22.779-9.441c8.594,0,16.685,3.354,22.779,9.441c6.082,6.082,9.431,14.171,9.431,22.779
+                    s-3.349,16.697-9.431,22.779l-52.63,52.63l-32.696-32.689l0.242-0.242c14.232-14.232,14.232-37.39,0-51.622
+                    c-6.194-6.194-14.224-9.878-22.861-10.564c0.829-1.067,1.708-2.101,2.677-3.07C200.615,207.091,208.706,203.739,217.312,203.739z
+                    M139.752,240.953c3.117-3.117,7.261-4.833,11.668-4.833c4.408,0,8.552,1.717,11.669,4.833c1.875,1.875,4.419,2.929,7.071,2.929
+                    c2.652,0,5.196-1.054,7.071-2.929c3.117-3.117,7.261-4.833,11.668-4.833s8.552,1.717,11.668,4.833
+                    c6.435,6.434,6.434,16.903,0,23.338L170.161,294.7l-30.409-30.409C133.318,257.857,133.318,247.388,139.752,240.953z"></path>
+                        <path className='fill-gray-400' d="M434.146,116.22h-58.407V51.124c0-3.015-1.36-5.868-3.701-7.767c-2.342-1.899-5.416-2.639-8.364-2.017L8.031,116.416
+                    C3.451,117.331,0,121.372,0,126.22v266.802c0,5.523,4.477,10,10,10h424.146c5.523,0,10-4.477,10-10V126.22
+                    C444.146,120.698,439.669,116.22,434.146,116.22z M355.739,116.22h-249.95l249.95-52.765V116.22z M424.146,383.022H20V136.22
+                    h404.146V383.022z"></path>
+                    </g>
+                </svg>
+
+            ),
         },
         {
             title: "We Mail It",
-            description: "Based on the profile and message theme, we will generate the cards and messages for you",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
-                    <path className='text-gray-400' strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                </svg>
-            )
-        },
-        {
-            title: "Build your Recipient Profile",
             description: "Pick your favorite cards and based on the event date, we'll mail it for you!",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
@@ -67,33 +81,43 @@ export default function Main() {
         {
             title: "4 Greeting Cards",
             description: "4 physical greeting cards every month with custom messages built from your recipients profile",
-            icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="1024968870" className='w-12 md:w-16' data-icon-name="li-cards"> <g> <path className='fill-gray-400' d="M45.1,53.9c0.4,0,0.8-0.2,1.1-0.6l6.1-10.4c0.8-1.4,1.1-3.1,0.6-4.7c-0.4-1.6-1.5-3-2.9-3.8c-2.9-1.7-6.9-0.6-8.5,2.3
+            c-0.1,0.3-0.3,0.5-0.4,0.8c-0.2-0.2-0.5-0.3-0.7-0.5c-2.9-1.7-6.9-0.6-8.5,2.3c-0.8,1.4-1.1,3.1-0.6,4.7c0.4,1.6,1.5,3,2.9,3.8
+            l10.4,6C44.7,53.8,44.9,53.9,45.1,53.9z M33.6,43.3c-0.3-1-0.1-2,0.4-2.8c0.7-1.2,1.9-1.9,3.3-1.9c0.7,0,1.3,0.2,1.9,0.5
+            c0.9,0.5,1.5,1.3,1.7,2.3l0,0c0.2,0.7,0.9,1.1,1.5,0.9c0.7-0.2,1.1-0.9,0.9-1.5c-0.3-1-0.1-2,0.4-2.8c1-1.7,3.4-2.4,5.1-1.4
+            c0.9,0.5,1.5,1.3,1.7,2.3c0.3,1,0.1,2-0.4,2.8l-5.5,9.4l-9.3-5.4C34.4,45.1,33.8,44.2,33.6,43.3z"></path>
+                <path className='fill-gray-400' d="M83.4,30.6c-0.7-1.2-1.8-2.1-3.2-2.4l-8.5-2.3v-2.7c0-2.9-2.4-5.2-5.2-5.2h-8.7l-0.7-2.6c-0.7-2.7-3.7-4.4-6.4-3.7L19.8,20
+            c-1.4,0.4-2.5,1.2-3.2,2.4c-0.7,1.2-0.9,2.6-0.5,4l13.5,50.2c0.5,1.8,1.9,3.2,3.6,3.7v0.1l30.9,8.3c0.4,0.1,0.9,0.2,1.4,0.2
+            c0.9,0,1.8-0.2,2.6-0.7c1.2-0.7,2.1-1.8,2.4-3.2L84,34.8C84.3,33.2,84.1,31.8,83.4,30.6z M66.5,20.4c1.5,0,2.8,1.2,2.8,2.8v37.5
+            L58.5,20.4H66.5z M31.9,75.8L18.5,25.6c-0.2-0.7-0.1-1.4,0.3-2.1c0.4-0.6,1-1.1,1.7-1.3l30.9-8.3c0.2-0.1,0.5-0.1,0.7-0.1
+            c1.3,0,2.3,0.8,2.7,2L68.3,66c0.4,1.5-0.5,3-1.9,3.4l-30.9,8.3C33.9,78.1,32.3,77.2,31.9,75.8z M69.2,70.4v4.7
+            c0,1.5-1.2,2.7-2.8,2.7H44.6l22.3-6C67.8,71.6,68.6,71.1,69.2,70.4z M68.1,84.1c-0.2,0.7-0.6,1.3-1.3,1.7c-0.6,0.4-1.4,0.5-2.1,0.3
+            l-21.3-5.7h23.1c1,0,2-0.3,2.8-0.8L68.1,84.1z M81.5,33.9l-9.8,36.5v-42l7.8,2.1c0.7,0.2,1.3,0.6,1.7,1.3
+            C81.6,32.4,81.7,33.2,81.5,33.9z"></path>
+            </g>
             </svg>)
         },
         {
             title: "Calendar View",
             description: "A Calendar view that shows you all your upcoming occasions for every month",
-            icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-            </svg>)
+            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1792" id="1944968044" className="w-11 md:w-16 h-11 md:h-16" data-icon-name="fa-calendar"> <path className='fill-gray-400' fill="inherit" d="M128 1664h288v-288h-288v288zM480 1664h320v-288h-320v288zM128 1312h288v-320h-288v320zM480 1312h320v-320h-320v320zM128 928h288v-288h-288v288zM864 1664h320v-288h-320v288zM480 928h320v-288h-320v288zM1248 1664h288v-288h-288v288zM864 1312h320v-320h-320v320zM512 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1248 1312h288v-320h-288v320zM864 928h320v-288h-320v288zM1248 928h288v-288h-288v288zM1280 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1664 384v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"></path>
+            </svg>),
         },
         {
             title: "Notification Reminders",
             description: "We will send you notification reminders of upcoming events, so you never miss another special moment.",
             icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
                 <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-            </svg>)
+            </svg>),
         },
         {
             title: "Mailed Cards",
             description: "We mail the greeting cards you picked directly to your recipient!",
             icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
                 <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
-            </svg>)
+            </svg>),
         }
     ]
-
 
     const dataTestimonials = [
         {
@@ -164,7 +188,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                 <div className='flex-col md:max-w-6xl max-w-3xl mx-auto h-4/5 text-center z-10 my-12 md:my-20 px-2 sm:px-0'>
                     <h1 className='text-[2.7rem] md:text-7xl leading-snug md:leading-tight my-5 text-white uppercase font-text-comfortaa font-semibold'>Heartfelt MOMENTS MADE EASY</h1>
                     <p className='text-white md:text-3xl text-2xl mt-5 md:mt-10 mb-8 font-text-shadow-italic'>AI Powered Greeting Cards With A Human Touch</p>
-                    <span className='flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-between w-3/5 mx-auto'>
+                    <span className='flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-around w-3/5 mx-auto'>
                         <button className='w-fit sm:w-[30%]  bg-pink-utility text-white font-semibold rounded-md py-2 px-4 sm:px-2 text-lg md:text-xl border-pink-utility border-2 hover:bg-white hover:text-pink-utility transition-all duration-200 '>Subscribe</button>
                         <button className='w-fit md:w-[30%] bg-white border-pink-utility border-2 text-pink-utility font-semibold rounded-md py-2 px-4 md:px-2 text-lg md:text-xl hover:bg-pink-utility hover:text-white transition-all duration-200'>Generate Card</button>
                     </span>
@@ -178,11 +202,11 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                     <hr className='h-[3px] w-[10%] md:w-[10%] mx-auto rounded-lg bg-pink-utility' />
                     <div className='grid grid-cols-1  sm:grid-cols-3 gap-12 sm:gap-2 md:gap-8 mt-12 md:mt-20'>
                         {dataSvg.map((item, index) => (
-                            <div key={index} className='w-4/5 mx-auto sm:w-full p-3 md:p-5 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 h-68 sm:h-76 hover:border border-transparent border'>
+                            <div key={index} className='w-4/5 mx-auto sm:w-full p-3 md:p-5 cursor-default h-68 sm:h-76'>
                                 <div className='mx-auto p-5 border border-2-[#364957] w-fit rounded-full mb-3'>
                                     {item.icon}
                                 </div>
-                                <h3 className='text-lg md:text-2xl font-semibold h-10 sm:h-16 text-main-utility mt-4 mb-3'>{item.title}</h3>
+                                <h3 className='text-lg md:text-2xl font-text-shadow-italic font-semibold h-10 sm:h-12 text-main-utility mt-4 mb-1'>{item.title}</h3>
                                 <p className='text-main-utility text-base'>{item.description}</p>
                             </div>
                         ))}
@@ -192,22 +216,22 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
 
             {/* REAL GREETINGS CARDS */}
             <section className='flex items-center justify-center bg-slate-50'>
-                <div className='flex-col sm:flex-row flex items-center justify-center gap-0 md:gap-12 w-full'>
+                <div className='flex-col sm:flex-row flex items-center justify-center gap-0 md:gap-10 w-full'>
                     <article className='w-full border'>
                         <span className=''>
                             <img src={pic1} alt="" className='h-[80vh] md:h-[80vh] w-full object-cover' />
                         </span>
                     </article>
 
-                    <article className='w-full px-5 py-10 sm:py-0 sm:pb-10'>
+                    <article className='w-full px-2 py-10 sm:py-0 sm:pb-10'>
                         <div className='flex flex-col gap-5 sm:gap-10'>
                             <span className=''>
                                 <h2 className='text-3xl md:text-5xl font-semibold text-main-utility mb-2 sm:mb-5'>Real Greetings Cards</h2>
                                 <hr className='h-[3px] w-[20%] rounded-lg bg-pink-utility' />
                             </span>
                             <p className='text-main-utility text-base md:text-lg'>An amazing collection of high-quality card made from 100% recycled material.</p>
-                            <p className='text-pink-utility text-lg md:text-2xl font-medium'>Get our special offer - 30% off</p>
-                            <button className='w-fit md:w-[80%] lg:w-[40%] bg-pink-utility text-white font-semibold rounded-full py-3 px-7 md:px-2 text-sm md:text-base border-pink-utility border-2 hover:bg-white hover:text-pink-utility transition-all duration-200 uppercase'>Get Started Today!</button>
+                            <p className='text-pink-utility text-lg md:text-2xl font-normal'>Get our special offer - 30% off</p>
+                            <button className='w-fit md:w-[80%] lg:w-[40%] hover:bg-pink-utility hover:text-white font-semibold rounded-full py-3 px-7 md:px-2 text-sm md:text-base border-pink-utility border-2 bg-transparent text-pink-utility transition-all duration-200 uppercase'>Get Started Today!</button>
                         </div>
                     </article>
                 </div>
@@ -217,15 +241,16 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
             <section className='flex items-center justify-center h-auto my-16 md:my-12'>
                 <div className='max-w-screen-xl text-center w-full'>
                     <span>
-                        <h2 className='text-4xl md:text-5xl font-semibold text-main-utility'>What Do You Get?</h2>
+                        <h2 className='text-4xl md:text-5xl pb-5 font-semibold text-main-utility'>What Do You Get?</h2>
+                        <hr className='h-[3px] w-[10%] md:w-[15%] mx-auto rounded-lg bg-pink-utility' />
                     </span>
                     <article className='flex flex-col sm:flex-row items-center gap-12 sm:gap-1 md:gap-10 mt-10 md:mt-20'>
                         {dataGetCard.map((item, index) => (
-                            <div key={index} className='flex w-4/5 sm:w-full items-center flex-col justify-between px-2 self-center py-5 h-60 sm:h-72 hover:shadow-md cursor-default hover:rounded-md hover:shadow-gray-300 hover:border-gray-100 border border-transparent'>
-                                <div className='mx-auto p-0 md:p-5 w-fit rounded-full mb-3'>
+                            <div key={index} className='flex w-4/5 sm:w-full items-center flex-col justify-between px-2 self-center py-5 h-60 sm:h-72 cursor-default'>
+                                <div className='mx-auto p-0 md:p-5 w-fit rounded-full'>
                                     {item.icon}
                                 </div>
-                                <h3 className='text-xl md:text-2xl font-semibold text-main-utility mb-4'>{item.title}</h3>
+                                <h3 className='text-xl md:text-2xl font-text-shadow-italic font-semibold text-main-utility mb-2'>{item.title}</h3>
                                 <p className='text-main-utility text-sm md:text-base'>{item.description}</p>
                             </div>
                         ))}
@@ -251,7 +276,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                         </span>
                                         <p className='text-main-utility text-base sm:text-sm md:text-base my-4'>{item.description}</p>
                                         <h3 className='text-lg md:text-xl text-main-utility font-semibold mb-0 sm:mb-2 mt-5 md:mt-10'>{item.title}</h3>
-                                        <h4 className='text-xl md:text-2xl text-main-utility font-normal'>{item.title2}</h4>
+                                        <h4 className='text-xl md:text-2xl italic text-main-utility font-normal'>{item.title2}</h4>
                                     </div>
                                 </article>
                             </div>
@@ -320,20 +345,6 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                         <h1 class="text-2xl font-semibold lg:text-4xl text-center dark:text-white">Frequently asked questions</h1>
 
                         <div class="mt-8 space-y-8 lg:mt-12">
-                            {/* <div className="p-8 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={toggleText}>
-                                <button className="flex items-center justify-between w-full">
-                                    <h1 className="font-semibold  dark:text-white text-start">How can I play for my appointment?</h1>
-                                    <span className="text-gray-400 bg-gray-200 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
-                                        </svg>
-                                    </span>
-                                </button>
-
-                                <p className={`text-sm transition-all duration-300 dark:text-gray-300 ${showText ? 'opacity-100 max-h-[200px] pt-5 ease-in-out' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
-                                </p>
-                            </div> */}
                             <div className='flex items-center flex-col gap-10'>
                                 {[0, 1, 2].map(index => (
                                     <div key={index} className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={() => toggleText(index)}>
@@ -356,56 +367,6 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                                     </div>
                                 ))}
                             </div>
-
-
-
-                            {/* <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
-                                <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold dark:text-white text-start">Is the cost of the appoinment covered by private health insurance?</h1>
-
-                                    <span class="text-white bg-blue-500 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
-                                <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold dark:text-white text-start">Do i need a referral?</h1>
-
-                                    <span class="text-white bg-blue-500 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
-                                <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold dark:text-white text-start">What are your opening house?</h1>
-
-                                    <span class="text-white bg-blue-500 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div class="p-8 rounded-lg dark:bg-gray-800 cursor-pointer">
-                                <button class="flex items-center justify-between w-full">
-                                    <h1 class="font-semibold dark:text-white text-start">What can i expect at my first consultation?</h1>
-
-                                    <span class="text-white bg-blue-500 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div> */}
                         </div>
                     </div>
                 </section>
