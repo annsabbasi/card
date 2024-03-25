@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import pic1 from '../Images/pic1.webp'
 import bglogo from '../Images/logos/bg-logo.png'
 
@@ -19,61 +19,74 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Main() {
-
-    const [showText, setShowText] = useState([false, false, false]);
-
-    const toggleText = (index) => {
-        setShowText(prevState => {
-            const newState = [...prevState];
-            newState[index] = !newState[index];
-            return newState;
-        });
+    const initialState = {
+        TextShown1: false,
+        TextShown2: false,
+        TextShown3: false,
+        TextShown4: false,
     }
+
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'Toggle-Text1':
+                return { ...state, TextShown1: !state.TextShown1 };
+            case 'Toggle-Text2':
+                return { ...state, TextShown2: !state.TextShown2 };
+            case 'Toggle-Text3':
+                return { ...state, TextShown3: !state.TextShown3 };
+            case 'Toggle-Text4':
+                return { ...state, TextShown4: !state.TextShown4 };
+            default:
+                return state;
+        }
+    }
+
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     const dataSvg = [
         {
             title: "Build Your Recipient Profile",
             description: "Build your recipients profile, by telling us a bit about them",
-            icon: (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
-                <path className='text-gray-400' strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-            </svg>),
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
+                    <path className='text-gray-500' stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+
+            ),
 
         },
         {
             title: "Generate Your Cards",
             description: "Based on the profile and message theme, we will generate the cards and messages for you",
-            icon: (
-                <svg className="w-11 md:w-16 h-11 md:h-16" version="1.1" id="1325609919" viewBox="0 0 444.146 444.146" xmlSpace="preserve" data-icon-custom="true" data-icon-name="wedding-greeting-card-svgrepo-com.svg">
-                    <g>
-                        <path className='fill-gray-400' d="M163.09,315.913c1.875,1.875,4.418,2.929,7.071,2.929s5.196-1.053,7.071-2.929l23.095-23.096l39.769,39.76
-                    c1.953,1.952,4.511,2.928,7.07,2.928s5.119-0.977,7.071-2.929l59.7-59.7c9.859-9.859,15.289-22.972,15.289-36.921
-                    s-5.43-27.062-15.293-36.925c-9.875-9.863-22.986-15.295-36.917-15.295c-10.828,0-21.156,3.277-29.851,9.362
-                    c-8.694-6.083-19.023-9.36-29.854-9.36c-13.948,0-27.062,5.432-36.926,15.296c-5.925,5.925-10.255,13.031-12.771,20.867
-                    c-4.973-2.466-10.481-3.782-16.193-3.782c-9.75,0-18.917,3.797-25.811,10.691c-14.232,14.232-14.232,37.389,0,51.622
-                    L163.09,315.913z M217.312,203.739c8.606,0,16.697,3.352,22.784,9.438c3.907,3.906,10.238,3.906,14.142,0
-                    c6.089-6.088,14.178-9.441,22.779-9.441c8.594,0,16.685,3.354,22.779,9.441c6.082,6.082,9.431,14.171,9.431,22.779
-                    s-3.349,16.697-9.431,22.779l-52.63,52.63l-32.696-32.689l0.242-0.242c14.232-14.232,14.232-37.39,0-51.622
-                    c-6.194-6.194-14.224-9.878-22.861-10.564c0.829-1.067,1.708-2.101,2.677-3.07C200.615,207.091,208.706,203.739,217.312,203.739z
-                    M139.752,240.953c3.117-3.117,7.261-4.833,11.668-4.833c4.408,0,8.552,1.717,11.669,4.833c1.875,1.875,4.419,2.929,7.071,2.929
-                    c2.652,0,5.196-1.054,7.071-2.929c3.117-3.117,7.261-4.833,11.668-4.833s8.552,1.717,11.668,4.833
-                    c6.435,6.434,6.434,16.903,0,23.338L170.161,294.7l-30.409-30.409C133.318,257.857,133.318,247.388,139.752,240.953z"></path>
-                        <path className='fill-gray-400' d="M434.146,116.22h-58.407V51.124c0-3.015-1.36-5.868-3.701-7.767c-2.342-1.899-5.416-2.639-8.364-2.017L8.031,116.416
-                    C3.451,117.331,0,121.372,0,126.22v266.802c0,5.523,4.477,10,10,10h424.146c5.523,0,10-4.477,10-10V126.22
-                    C444.146,120.698,439.669,116.22,434.146,116.22z M355.739,116.22h-249.95l249.95-52.765V116.22z M424.146,383.022H20V136.22
-                    h404.146V383.022z"></path>
-                    </g>
-                </svg>
-
-            ),
+            icon: (<svg className="w-11 md:w-16 h-11 md:h-16" id="Capa_1" viewBox="0 0 444.146 444.146" xmlSpace="preserve">
+                <g>
+                    <path className='fill-gray-500' d="M163.09,315.913c1.875,1.875,4.418,2.929,7.071,2.929s5.196-1.053,7.071-2.929l23.095-23.096l39.769,39.76
+                c1.953,1.952,4.511,2.928,7.07,2.928s5.119-0.977,7.071-2.929l59.7-59.7c9.859-9.859,15.289-22.972,15.289-36.921
+                s-5.43-27.062-15.293-36.925c-9.875-9.863-22.986-15.295-36.917-15.295c-10.828,0-21.156,3.277-29.851,9.362
+                c-8.694-6.083-19.023-9.36-29.854-9.36c-13.948,0-27.062,5.432-36.926,15.296c-5.925,5.925-10.255,13.031-12.771,20.867
+                c-4.973-2.466-10.481-3.782-16.193-3.782c-9.75,0-18.917,3.797-25.811,10.691c-14.232,14.232-14.232,37.389,0,51.622
+                L163.09,315.913z M217.312,203.739c8.606,0,16.697,3.352,22.784,9.438c3.907,3.906,10.238,3.906,14.142,0
+                c6.089-6.088,14.178-9.441,22.779-9.441c8.594,0,16.685,3.354,22.779,9.441c6.082,6.082,9.431,14.171,9.431,22.779
+                s-3.349,16.697-9.431,22.779l-52.63,52.63l-32.696-32.689l0.242-0.242c14.232-14.232,14.232-37.39,0-51.622
+                c-6.194-6.194-14.224-9.878-22.861-10.564c0.829-1.067,1.708-2.101,2.677-3.07C200.615,207.091,208.706,203.739,217.312,203.739z
+                M139.752,240.953c3.117-3.117,7.261-4.833,11.668-4.833c4.408,0,8.552,1.717,11.669,4.833c1.875,1.875,4.419,2.929,7.071,2.929
+                c2.652,0,5.196-1.054,7.071-2.929c3.117-3.117,7.261-4.833,11.668-4.833s8.552,1.717,11.668,4.833
+                c6.435,6.434,6.434,16.903,0,23.338L170.161,294.7l-30.409-30.409C133.318,257.857,133.318,247.388,139.752,240.953z"/>
+                    <path className='fill-gray-500' d="M434.146,116.22h-58.407V51.124c0-3.015-1.36-5.868-3.701-7.767c-2.342-1.899-5.416-2.639-8.364-2.017L8.031,116.416
+                C3.451,117.331,0,121.372,0,126.22v266.802c0,5.523,4.477,10,10,10h424.146c5.523,0,10-4.477,10-10V126.22
+                C444.146,120.698,439.669,116.22,434.146,116.22z M355.739,116.22h-249.95l249.95-52.765V116.22z M424.146,383.022H20V136.22
+                h404.146V383.022z"/>
+                </g>
+            </svg>),
         },
         {
             title: "We Mail It",
             description: "Pick your favorite cards and based on the event date, we'll mail it for you!",
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-11 md:w-16 h-11 md:h-16">
-                    <path className='text-gray-400' strokeLinecap="round" strokeLinejoin="round" d="m7.875 14.25 1.214 1.942a2.25 2.25 0 0 0 1.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 0 1 1.872 1.002l.164.246a2.25 2.25 0 0 0 1.872 1.002h2.092a2.25 2.25 0 0 0 1.872-1.002l.164-.246A2.25 2.25 0 0 1 16.954 9h4.636M2.41 9a2.25 2.25 0 0 0-.16.832V12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 0 1 .382-.632l3.285-3.832a2.25 2.25 0 0 1 1.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 0 0 2.25 2.25Z" />
+                <svg className="w-11 md:w-16 h-11 md:h-16" viewBox="0 0 256.00098 256.00098" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                    <path className='fill-gray-500' d="M216.00049,52.00049h-176a12.01343,12.01343,0,0,0-12,12V222.82422a11.88727,11.88727,0,0,0,6.93359,10.87793,12.05387,12.05387,0,0,0,5.09766,1.14111,11.91739,11.91739,0,0,0,7.69043-2.83349l32.2959-27.14942,2.35937-.85986H216.00049a12.01343,12.01343,0,0,0,12-12v-128A12.01343,12.01343,0,0,0,216.00049,52.00049Zm4,140a4.00428,4.00428,0,0,1-4,4H81.67139a3.99389,3.99389,0,0,0-1.37012.24219l-3.68555,1.34277a4.01,4.01,0,0,0-1.20508.69678l-32.83691,27.604a3.99985,3.99985,0,0,1-6.57324-3.062V64.00049a4.00426,4.00426,0,0,1,4-4h176a4.00427,4.00427,0,0,1,4,4Zm-56-80.00049a4.0002,4.0002,0,0,1-4,4h-64a4,4,0,0,1,0-8h64A4.0002,4.0002,0,0,1,164.00049,112Zm0,32a4.0002,4.0002,0,0,1-4,4h-64a4,4,0,0,1,0-8h64A4.0002,4.0002,0,0,1,164.00049,144Z" />
                 </svg>
-            )
+            ),
         }
     ]
 
@@ -81,12 +94,12 @@ export default function Main() {
         {
             title: "4 Greeting Cards",
             description: "4 physical greeting cards every month with custom messages built from your recipients profile",
-            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="1024968870" className='w-12 md:w-16' data-icon-name="li-cards"> <g> <path className='fill-gray-400' d="M45.1,53.9c0.4,0,0.8-0.2,1.1-0.6l6.1-10.4c0.8-1.4,1.1-3.1,0.6-4.7c-0.4-1.6-1.5-3-2.9-3.8c-2.9-1.7-6.9-0.6-8.5,2.3
+            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="1024968870" className='w-12 md:w-16' data-icon-name="li-cards"> <g> <path className='fill-gray-500' d="M45.1,53.9c0.4,0,0.8-0.2,1.1-0.6l6.1-10.4c0.8-1.4,1.1-3.1,0.6-4.7c-0.4-1.6-1.5-3-2.9-3.8c-2.9-1.7-6.9-0.6-8.5,2.3
             c-0.1,0.3-0.3,0.5-0.4,0.8c-0.2-0.2-0.5-0.3-0.7-0.5c-2.9-1.7-6.9-0.6-8.5,2.3c-0.8,1.4-1.1,3.1-0.6,4.7c0.4,1.6,1.5,3,2.9,3.8
             l10.4,6C44.7,53.8,44.9,53.9,45.1,53.9z M33.6,43.3c-0.3-1-0.1-2,0.4-2.8c0.7-1.2,1.9-1.9,3.3-1.9c0.7,0,1.3,0.2,1.9,0.5
             c0.9,0.5,1.5,1.3,1.7,2.3l0,0c0.2,0.7,0.9,1.1,1.5,0.9c0.7-0.2,1.1-0.9,0.9-1.5c-0.3-1-0.1-2,0.4-2.8c1-1.7,3.4-2.4,5.1-1.4
             c0.9,0.5,1.5,1.3,1.7,2.3c0.3,1,0.1,2-0.4,2.8l-5.5,9.4l-9.3-5.4C34.4,45.1,33.8,44.2,33.6,43.3z"></path>
-                <path className='fill-gray-400' d="M83.4,30.6c-0.7-1.2-1.8-2.1-3.2-2.4l-8.5-2.3v-2.7c0-2.9-2.4-5.2-5.2-5.2h-8.7l-0.7-2.6c-0.7-2.7-3.7-4.4-6.4-3.7L19.8,20
+                <path className='fill-gray-500' d="M83.4,30.6c-0.7-1.2-1.8-2.1-3.2-2.4l-8.5-2.3v-2.7c0-2.9-2.4-5.2-5.2-5.2h-8.7l-0.7-2.6c-0.7-2.7-3.7-4.4-6.4-3.7L19.8,20
             c-1.4,0.4-2.5,1.2-3.2,2.4c-0.7,1.2-0.9,2.6-0.5,4l13.5,50.2c0.5,1.8,1.9,3.2,3.6,3.7v0.1l30.9,8.3c0.4,0.1,0.9,0.2,1.4,0.2
             c0.9,0,1.8-0.2,2.6-0.7c1.2-0.7,2.1-1.8,2.4-3.2L84,34.8C84.3,33.2,84.1,31.8,83.4,30.6z M66.5,20.4c1.5,0,2.8,1.2,2.8,2.8v37.5
             L58.5,20.4H66.5z M31.9,75.8L18.5,25.6c-0.2-0.7-0.1-1.4,0.3-2.1c0.4-0.6,1-1.1,1.7-1.3l30.9-8.3c0.2-0.1,0.5-0.1,0.7-0.1
@@ -95,26 +108,26 @@ export default function Main() {
             l-21.3-5.7h23.1c1,0,2-0.3,2.8-0.8L68.1,84.1z M81.5,33.9l-9.8,36.5v-42l7.8,2.1c0.7,0.2,1.3,0.6,1.7,1.3
             C81.6,32.4,81.7,33.2,81.5,33.9z"></path>
             </g>
-            </svg>)
+            </svg>),
         },
         {
             title: "Calendar View",
             description: "A Calendar view that shows you all your upcoming occasions for every month",
-            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1792" id="1944968044" className="w-11 md:w-16 h-11 md:h-16" data-icon-name="fa-calendar"> <path className='fill-gray-400' fill="inherit" d="M128 1664h288v-288h-288v288zM480 1664h320v-288h-320v288zM128 1312h288v-320h-288v320zM480 1312h320v-320h-320v320zM128 928h288v-288h-288v288zM864 1664h320v-288h-320v288zM480 928h320v-288h-320v288zM1248 1664h288v-288h-288v288zM864 1312h320v-320h-320v320zM512 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1248 1312h288v-320h-288v320zM864 928h320v-288h-320v288zM1248 928h288v-288h-288v288zM1280 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1664 384v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"></path>
+            icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1792" id="1944968044" className="w-11 md:w-12 h-11 md:h-12" data-icon-name="fa-calendar"> <path className='fill-gray-500' fill="inherit" d="M128 1664h288v-288h-288v288zM480 1664h320v-288h-320v288zM128 1312h288v-320h-288v320zM480 1312h320v-320h-320v320zM128 928h288v-288h-288v288zM864 1664h320v-288h-320v288zM480 928h320v-288h-320v288zM1248 1664h288v-288h-288v288zM864 1312h320v-320h-320v320zM512 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1248 1312h288v-320h-288v320zM864 928h320v-288h-320v288zM1248 928h288v-288h-288v288zM1280 448v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zM1664 384v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"></path>
             </svg>),
         },
         {
             title: "Notification Reminders",
             description: "We will send you notification reminders of upcoming events, so you never miss another special moment.",
-            icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+            icon: (<svg className="w-11 md:w-14 h-11 md:h-14" viewBox="0 0 256.00098 256.00098" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                <path className='fill-gray-500' d="M216.00049,52.00049h-176a12.01343,12.01343,0,0,0-12,12V222.82422a11.88727,11.88727,0,0,0,6.93359,10.87793,12.05387,12.05387,0,0,0,5.09766,1.14111,11.91739,11.91739,0,0,0,7.69043-2.83349l32.2959-27.14942,2.35937-.85986H216.00049a12.01343,12.01343,0,0,0,12-12v-128A12.01343,12.01343,0,0,0,216.00049,52.00049Zm4,140a4.00428,4.00428,0,0,1-4,4H81.67139a3.99389,3.99389,0,0,0-1.37012.24219l-3.68555,1.34277a4.01,4.01,0,0,0-1.20508.69678l-32.83691,27.604a3.99985,3.99985,0,0,1-6.57324-3.062V64.00049a4.00426,4.00426,0,0,1,4-4h176a4.00427,4.00427,0,0,1,4,4Zm-56-80.00049a4.0002,4.0002,0,0,1-4,4h-64a4,4,0,0,1,0-8h64A4.0002,4.0002,0,0,1,164.00049,112Zm0,32a4.0002,4.0002,0,0,1-4,4h-64a4,4,0,0,1,0-8h64A4.0002,4.0002,0,0,1,164.00049,144Z" />
             </svg>),
         },
         {
             title: "Mailed Cards",
             description: "We mail the greeting cards you picked directly to your recipient!",
-            icon: (<svg className='w-12 md:w-16' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                <path className='text-gray-400' stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
+            icon: (<svg className='w-12 md:w-16 h-12 md:h-14' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path className='text-gray-500' stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
             </svg>),
         }
     ]
@@ -338,40 +351,110 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                 </div>
             </section>
 
-            {/* TODO SECTION */}
-            < section className='dark:bg-gray-900' >
-                <section class="max-w-screen-xl mx-auto">
-                    <div class="container px-6 py-12 mx-auto">
-                        <h1 class="text-2xl font-semibold lg:text-4xl text-center dark:text-white">Frequently asked questions</h1>
+            {/* FAQ SECTION */}
+            <section class="bg-gray-900">
+                <div class="container px-6 py-12 mx-auto">
+                    <h1 class="text-2xl font-semibold lg:text-3xl text-white">Frequently asked questions</h1>
 
-                        <div class="mt-8 space-y-8 lg:mt-12">
-                            <div className='flex items-center flex-col gap-10'>
-                                {[0, 1, 2].map(index => (
-                                    <div key={index} className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 cursor-pointer" onClick={() => toggleText(index)}>
-                                        <button className="flex items-center justify-between w-full">
-                                            <h1 className="font-semibold text-gray-700 dark:text-white text-start">
-                                                {index === 0 ? "How can I play for my appointment?" : index === 1 ? "Is the cost of the appointment covered by private health insurance?" : "Do I need a referral?"}
-                                            </h1>
-                                            <span className="text-gray-400 bg-gray-200 rounded-full">
-                                                {showText ? (<svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 12H6" />
-                                                </svg>) : (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25" />
-                                                </svg>
-                                                )}
-                                            </span>
-                                        </button>
-                                        <p className={`text-sm transition-all duration-300 text-gray-500 dark:text-gray-300 ${showText[index] ? 'opacity-100 max-h-[200px] pt-5 ease-in-out' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
+                    <div class="mt-8 space-y-8 lg:mt-12">
+                        <div class="p-8 rounded-lg bg-gray-800 cursor-pointer" onClick={() => dispatch({ type: 'Toggle-Text1' })} >
+                            <button class="flex items-center justify-between w-full">
+                                <h1 class="font-semibold text-white text-start">How i can play for my appoinment ?</h1>
+                                <span className='text-gray-200'>
+                                    {state.TextShown1 ?
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                                            </svg>
+                                        </span>
+                                        :
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                            </svg>
+                                        </span>
+                                    }
+                                </span>
+                            </button>
+                            <p class={`text-sm text-gray-300 transition-all duration-300 ease ${state.TextShown1 ? 'opacity-100 max-h-[200px] pt-5' : 'max-h-0 overflow-hidden opacity-0'}`}>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                            </p>
+                        </div>
+
+                        <div class="p-8 rounded-lg bg-gray-800 cursor-pointer" onClick={() => dispatch({ type: 'Toggle-Text2' })} >
+                            <button class="flex items-center justify-between w-full">
+                                <h1 class="font-semibold text-white text-start">How Is the Working Enviorment in Our Company?</h1>
+                                <span className='text-gray-200'>
+                                    {state.TextShown2 ?
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                                            </svg>
+                                        </span>
+                                        :
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                            </svg>
+                                        </span>
+                                    }
+                                </span>
+                            </button>
+                            <p class={`text-sm text-gray-300 transition-all duration-300 ease ${state.TextShown2 ? 'opacity-100 max-h-[200px] pt-5' : 'max-h-0 overflow-hidden opacity-0'}`}>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                            </p>
+                        </div>
+
+                        <div class="p-8 rounded-lg bg-gray-800 cursor-pointer" onClick={() => dispatch({ type: 'Toggle-Text3' })} >
+                            <button class="flex items-center justify-between w-full">
+                                <h1 class="font-semibold text-white text-start">How i can play for my appoinment ?</h1>
+                                <span className='text-gray-200'>
+                                    {state.TextShown3 ?
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                                            </svg>
+                                        </span>
+                                        :
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                            </svg>
+                                        </span>
+                                    }
+                                </span>
+                            </button>
+                            <p class={`text-sm text-gray-300 transition-all duration-300 ease ${state.TextShown3 ? 'opacity-100 max-h-[200px] pt-5' : 'max-h-0 overflow-hidden opacity-0'}`}>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                            </p>
+                        </div>
+
+                        <div class="p-8 rounded-lg bg-gray-800 cursor-pointer" onClick={() => dispatch({ type: 'Toggle-Text4' })} >
+                            <button class="flex items-center justify-between w-full">
+                                <h1 class="font-semibold text-white text-start">What is the main purpose of our Company? What does it Do?</h1>
+                                <span className='text-gray-200'>
+                                    {state.TextShown4 ?
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                                            </svg>
+                                        </span>
+                                        :
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                            </svg>
+                                        </span>
+                                    }
+                                </span>
+                            </button>
+                            <p class={`text-sm text-gray-300 transition-all duration-300 ease ${state.TextShown4 ? 'opacity-100 max-h-[200px] pt-5' : 'max-h-0 overflow-hidden opacity-0'}`}>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?
+                            </p>
                         </div>
                     </div>
-                </section>
-
-            </section>
+                </div>
+            </section >
 
             {/* FOOTER */}
             < footer className='bg-slate-800 flex items-center justify-center' >
@@ -449,7 +532,7 @@ c16.281-0.916,34.442-3.851,46.451-18.676C193.199,140.125,198,118.893,198,86.3V25
                         </span>
                     </div>
                 </article>
-            </ footer>
+            </ footer >
         </div >
     )
 }
