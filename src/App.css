@@ -29,6 +29,19 @@
   .text-main-utility {
     color: #364957
   }
+
+  .color-yellow-utility {
+    border-color: #966711
+    /* border-color: #CF921D */
+  }
+
+  .bg-yellow-utility {
+    background-color: #CF921D
+  }
+
+  .bg-yellow-rgb {
+    background-color: rgba(207, 146, 29, 0.8)
+  }
 }
 
 

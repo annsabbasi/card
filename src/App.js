@@ -1,12 +1,9 @@
 import './App.css';
-import Main from './Components/Main';
-import Navbar from './Components/Navbar';
-
+import Dashboard from './Components/Dashboard';
 function App() {
   return (
     <>
-      <Navbar />
-      <Main />
+    <Dashboard/>
     </>
   );
 }
