@@ -17,10 +17,10 @@ const MobileNav = ({ onClose }) => {
                             <a href="/">About Us</a>
                             <span className='absolute left-0 bottom-0 w-full h-[2px] bg-pink-utility transition-transform transform origin-left'></span>
                         </li>
-                        <li className='relative theli pb-[2px] w-fit'>
+                        <Link to={'Dashboard'} className='relative theli pb-[2px] w-fit'>
                             <a href="/">Browse Cards</a>
                             <span className='absolute left-0 bottom-0 w-full h-[2px] bg-pink-utility transition-transform transform origin-left'></span>
-                        </li>
+                        </Link>
                         <li className='relative theli pb-[2px] w-fit'>
                             <a href="/">Plans</a>
                             <span className='absolute left-0 bottom-0 w-full h-[2px] bg-pink-utility transition-transform transform origin-left'></span>

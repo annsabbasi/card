@@ -16,10 +16,10 @@ import img8 from '../Images/img8.webp'
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Footer from './Footer'
-import Navbar from './Navbar'
+import Footer from '../Components/Footer'
+import Navbar from '../Components/Navbar'
 
-export default function Main() {
+export default function Home() {
     const initialState = {
         TextShown1: false,
         TextShown2: false,
