@@ -7,7 +7,6 @@ import { BookAd, GenerateCardChild, GenerateCards, MyCards, SubPlan } from './Co
 function App() {
   return (
     <>
-      {/* <Dashboard /> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Dashboard' element={<Dashboard />}>

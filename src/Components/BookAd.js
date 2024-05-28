@@ -31,7 +31,7 @@ export default function BookAd() {
                             <h1 className='text-gray-700 text-2xl font-text-shadow-italic font-bold'>Character Triats</h1>
                             <div className='flex flex-wrap gap-2'>
                                 {['Kind', 'Loving', 'Generous', 'Funny', 'Adventorous', 'Compassionate', 'Spontanious', 'Patient', 'Gentle'].map((item, index) => (
-                                    <button className='flex items-center w-[15%] justify-center hover:bg-pink-utility rounded-md text-pink-utility gap-1 py-2 px-3 hover:bg-pink-opacity hover:border-pink-urility transition-all duration-150 border border-pink-utility mb-1 font-text-shadow-italic text-xl font-semibold' key={index}>{item}</button>
+                                    <button className='flex items-center w-[15%] justify-center rounded-md text-pink-utility gap-1 py-2 px-3 hover:bg-pink-opacity hover:border-pink-urility transition-all duration-150 border border-pink-utility mb-1 font-text-shadow-italic text-xl font-semibold' key={index}>{item}</button>
                                 ))}
                             </div>
                         </div>

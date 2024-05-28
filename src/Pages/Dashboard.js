@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import logo from '../Images/logos/logo.webp';
-
 import Footer from '../Components/Footer';
 import { BookAd } from '../Components/CmptIndex';
-
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 
 export default function Dashboard() {
-
     const items = [
         { text: 'My Cards', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>, navigate: 'BookAd' },
         {
@@ -33,12 +30,10 @@ export default function Dashboard() {
         { text: 'Subsctiption Plans', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
     ];
 
-    const [activeIndex, setActiveIndex] = useState(null);
-
+    const [activeIndex, setActiveIndex] = useState(0);
     const handleChangeText = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
-
     return (
         <>
             <main>
@@ -57,14 +52,15 @@ export default function Dashboard() {
                         </div>
                     </nav>
                 </header>
-                {/* SECTION AFTER HEADER */}
+
+                {/* SECTION DASHBOARD CONTENT */}
                 <section className='flex justify-center w-full gap-4 max-w-screen-2xl mx-auto'>
                     <aside className="w-[22%] h-auto border border-gray-200 border-t-0 bg-gray-50">
                         <div className="pt-4">
                             <ul className="space-y-4 mb-8 mt-4 text-lg">
                                 {items.map((item, index) => (
                                     <Link
-                                        to={`/Dashboard/${item.navigate}`}  // Updated path
+                                        to={`/Dashboard/${item.navigate}`}
                                         key={index}
                                         className={`cursor-pointer relative w-full flex items-center gap-2 py-5 hover:text-pink-utility hover:bg-gray-200 transition-all duration-200 z-10 ${activeIndex === index ? 'text-pink-utility bg-gray-200' : 'text-grey-700'}`}
                                         onClick={() => handleChangeText(index)}
@@ -78,12 +74,8 @@ export default function Dashboard() {
                             </ul>
                         </div>
                     </aside>
-
                     {/* Nested routes */}
-                    <Routes>
-                        <Route path="/" element={<BookAd />} />
-                    </Routes>
-                    <Outlet />
+                    <RouteDash />
                 </section >
                 <Footer />
             </main >
@@ -91,16 +83,13 @@ export default function Dashboard() {
     );
 }
 
-export const CustomDot = ({ activeIndexx, handleDotClick }) => {
+export const RouteDash = () => {
     return (
-        <ul className="custom-dot-list-style">
-            {[...Array(8)].map((_, index) => (
-                <li
-                    key={index}
-                    className={`custom-dot ${activeIndexx === index ? 'active' : ''}`}
-                    onClick={() => handleDotClick(index)}
-                />
-            ))}
-        </ul>
+        <>
+            <Routes>
+                <Route path="/" element={<BookAd />} />
+            </Routes>
+            <Outlet />
+        </>
     );
 };
